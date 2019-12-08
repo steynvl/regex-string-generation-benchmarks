@@ -23,7 +23,12 @@
 hs_err_pid*
 
 generex/.classpath
-generex/.project/
+generex/.project
 generex/.settings/
-
 generex/target/
+
+hampi/.classpath
+hampi/.project
+hampi/.settings/
+hampi/target/
+
