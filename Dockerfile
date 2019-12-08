@@ -14,27 +14,28 @@ RUN pip3 install --upgrade pip
 
 RUN apt-get install -y maven
 
+# exrex
+RUN pip3 install exrex
+
 # generex
 ADD generex/generex.jar /
 
 # regldg
-RUN wget https://regldg.com/regldg-1.0.0.tar.gz
-RUN tar -xvf 
-
-# hampi
-# ADD hampi/hampi.jar /
+ADD regldg/regldg /
 
 # egret
+ADD egret/egret.py /
 
 # brics
+ADD brics/brics.jar /
 
 # rex
-
-# rescue
-
-# jst
+RUN apt-get install -y mono-complete
+ADD rex/Rex.exe /
+RUN mono Rex.exe
 
 # mutrex
+ADD mutrex/mutrex.jar /
 
 ADD run_benchmarks.sh /
 CMD [ "./run_benchmarks.sh" ]
