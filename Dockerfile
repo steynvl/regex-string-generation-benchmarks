@@ -6,11 +6,14 @@ MAINTAINER Steyn van Litsenborgh <steyn.van.l@gmail.com>
 RUN apt-get update -y
 RUN apt-get upgrade -y
 
-RUN apt-get install -y wget
 RUN apt-get install -y git
 
 RUN apt-get install -y python3-pip
 RUN pip3 install --upgrade pip
+
+RUN pip3 install snortsig 
+RUN pip3 install pyparsing
+RUN pip3 install jsonlines 
 
 RUN apt-get install -y maven
 
@@ -32,7 +35,7 @@ ADD brics/brics.jar /
 # rex
 RUN apt-get install -y mono-complete
 ADD rex/Rex.exe /
-RUN mono Rex.exe
+# RUN mono Rex.exe
 
 # mutrex
 ADD mutrex/mutrex.jar /

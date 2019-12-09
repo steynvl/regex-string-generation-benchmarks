@@ -36,3 +36,5 @@ brics/.classpath
 brics/.project
 brics/.settings/
 brics/target/
+
+__pycache__/
