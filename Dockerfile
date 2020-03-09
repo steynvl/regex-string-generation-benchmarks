@@ -6,6 +6,9 @@ MAINTAINER Steyn van Litsenborgh <steyn.van.l@gmail.com>
 RUN apt-get update -y
 RUN apt-get upgrade -y
 
+# install java 8
+RUN apt-get install -y openjdk-8-jre
+
 RUN apt-get install -y git
 
 RUN apt-get install -y python3-pip
@@ -14,8 +17,6 @@ RUN pip3 install --upgrade pip
 RUN pip3 install snortsig 
 RUN pip3 install pyparsing
 RUN pip3 install jsonlines 
-
-RUN apt-get install -y maven
 
 # exrex
 RUN pip3 install exrex
@@ -35,10 +36,9 @@ ADD brics/brics.jar /
 # rex
 RUN apt-get install -y mono-complete
 ADD rex/Rex.exe /
-# RUN mono Rex.exe
 
 # mutrex
-ADD mutrex/mutrex.jar /
+# ADD mutrex/mutrex.jar /
 
 ADD run_benchmarks.sh /
 CMD [ "./run_benchmarks.sh" ]
